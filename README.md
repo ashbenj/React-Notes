@@ -7,7 +7,7 @@ My Notes.
 
 <code>
 // yarn command
-yarn create react-app animals
+yarn create react-app nameOfAppHere
 
 // npm command using the npx utility
 npx create-react-app animals
