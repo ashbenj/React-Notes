@@ -61,20 +61,20 @@ import styled from 'styled-components'
 
 
 <code>
-// div
-const StyledDiv = styled.div``;
+// div <br />
+const StyledDiv = styled.div``; <br />
 
-// paragraph
-const StyledP = styled.p``;
+// paragraph <br />
+const StyledP = styled.p``; <br />
 
-// section
-const StyledSection = styled.section``;
+// section <br />
+const StyledSection = styled.section``; <br />
 
-// headers h1 - h6
-const StyledHeading = styled.h1``;
+// headers h1 - h6 <br />
+const StyledHeading = styled.h1``; <br />
 
-// a
-const StyledA = styled.a``;
+// a <br />
+const StyledA = styled.a``; <br /> <br />
 
 // etc.....
 </code>
