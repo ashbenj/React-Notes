@@ -64,32 +64,32 @@ import styled from 'styled-components'
 // div 
 
 const StyledDiv = styled.div``; 
-<br /><br />
+<br /><br /><br />
 
 // paragraph 
 
 
 const StyledP = styled.p``; 
-<br /><br />
+<br /><br /><br />
 
 
 // section 
 
 const StyledSection = styled.section``; 
-<br /><br />
+<br /><br /><br />
 
 
 // headers h1 - h6 
 
 const StyledHeading = styled.h1``; 
-<br /><br />
+<br /><br /><br />
 
 
 // a 
 
 
 const StyledA = styled.a``; <
-<br /><br />
+<br /><br /><br />
 
 
 // etc.....
