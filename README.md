@@ -88,7 +88,7 @@ const StyledHeading = styled.h1``;
 // a 
 
 
-const StyledA = styled.a``; <
+const StyledA = styled.a``; 
 <br /><br /><br />
 
 
