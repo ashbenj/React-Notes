@@ -8,23 +8,73 @@ My Notes.
 <code>
 // yarn command
 yarn create react-app nameOfAppHere
-
-// npm command using the npx utility
-npx create-react-app animals
 </code>
+<br /><br />
+<code>
+// npm command using the npx utility <br />
+npx create-react-app nameOfAppHere
+</code>
+
+
+
+
 <br /><br /><br />
+
+
+
 
 <b>Semantic UI</b>
 
-1. import components
+1. Import components
 
 <code>
 import { Grid, Form, Input, TextArea, Button, Select } from "semantic-ui-react";
 </code>
 <br /><br />
 
-2. import the CSS
+2. Import the CSS
 
 <code>
 import "semantic-ui/dist/semantic.min.css";
+</code>
+
+
+
+
+<br /><br /><br />
+
+
+
+
+
+<b>Styled Components</b><br />
+
+1. Import Components
+
+<code>
+import styled from 'styled-components'
+</code>
+
+<br /><br />
+
+2. Usage:
+
+
+<code>
+// div
+const StyledDiv = styled.div``;
+
+// paragraph
+const StyledP = styled.p``;
+
+// section
+const StyledSection = styled.section``;
+
+// headers h1 - h6
+const StyledHeading = styled.h1``;
+
+// a
+const StyledA = styled.a``;
+
+// etc.....
 </code>
