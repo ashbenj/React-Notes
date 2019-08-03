@@ -1,5 +1,6 @@
 # Jashele's Notes
 My Notes.
+<br /><br />
 
 # React
 <b>Create a React App</b>
@@ -11,7 +12,7 @@ yarn create react-app animals
 // npm command using the npx utility
 npx create-react-app animals
 </code>
-
+<br /><br /><br />
 
 <b>Semantic UI</b>
 
@@ -20,7 +21,7 @@ npx create-react-app animals
 <code>
 import { Grid, Form, Input, TextArea, Button, Select } from "semantic-ui-react";
 </code>
-
+<br /><br />
 
 2. import the CSS
 
