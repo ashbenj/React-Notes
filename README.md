@@ -1,6 +1,7 @@
 # Jashele's Notes
-My Notes.
-<br /><br />
+Notes from Lambda School.  Study all you need!! 
+
+<br />
 
 # React
 **Create a React App**
@@ -100,4 +101,27 @@ ReactDOM.render(
 
 );
 ```
+
+<br />
+
+**Route Component**
+
+The Route component is the way we declare what components will be mounted based on what URL's are being requested by the user.
+
+```
+import { Route } from 'react-router-dom';
+```
+<br />
+
+*Component Prop (example)*
+
+The component that you want React to mount when the URL matches the requested path. So in our case when /users is requested, the Users component will be mounted.
+```
+<Route path="/users"/ component={Users} />
+```
+
+**Think of your Route components asking you this question every single time you set one up.**
+
+*What component do you want mounted when a users asks for what url path?*
+
 
