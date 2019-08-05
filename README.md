@@ -94,3 +94,25 @@ const StyledA = styled.a``;
 
 // etc.....
 </code>
+
+# React Router
+Add react-router 
+
+<code>yarn add react-router-dom</code><br /><br />
+
+
+In app.js import the BrowserRouter component and wrap your app with it:
+
+<code>import { BrowserRouter as Router } from 'react-router-dom';</code>
+
+<code>
+
+ReactDOM.render(    <br />
+  < Router>    <br />
+    < App />    <br />
+  < /Router>,    <br />
+  document.getElementById("root")    <br />
+);
+
+</code>
+
