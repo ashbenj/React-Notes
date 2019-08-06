@@ -113,7 +113,7 @@ import { Route } from 'react-router-dom';
 ```
 <br />
 
-*Component Prop (example)*
+*Component Prop (example):*
 
 The component that you want React to mount when the URL matches the requested path. So in our case when /users is requested, the Users component will be mounted.
 ```
@@ -125,5 +125,20 @@ The component that you want React to mount when the URL matches the requested pa
 **Think of your Route components asking you this question every single time you set one up.**
 
 *What component do you want mounted when a users asks for what url path?*
+
+<br />
+
+
+**Exact**
+
+By placing ```exact``` on a ```<Route />``` component you are saying that the specific path requested will be the only if the path matches exactly what was requested.
+
+```
+<Route exact path="/" component={Home}/>
+
+<Route path="/contact" component={Contact}/>
+
+<Route path="/about" component={About}/>
+```
 
 
