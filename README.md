@@ -120,6 +120,8 @@ The component that you want React to mount when the URL matches the requested pa
 <Route path="/users"/ component={Users} />
 ```
 
+<br />
+
 **Think of your Route components asking you this question every single time you set one up.**
 
 *What component do you want mounted when a users asks for what url path?*
