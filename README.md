@@ -106,7 +106,7 @@ ReactDOM.render(
 
 **Route Component**
 
-The Route component is the way we declare what components will be mounted based on what URL's are being requested by the user.
+The ```Route``` component is the way we declare what components will be mounted based on what URL's are being requested by the user.
 
 ```
 import { Route } from 'react-router-dom';
@@ -141,4 +141,39 @@ By placing ```exact``` on a ```<Route />``` component you are saying that the sp
 <Route path="/about" component={About}/>
 ```
 
+<br />
 
+**Link Component**
+
+Helps us stay within the realm of our “client-side app.”
+
+```import { Link } from 'react-router-dom'```
+
+<br />
+
+*Example:*
+
+```<Link to="/about">About</Link>```
+
+<br />
+
+**Dynamic Routing**
+
+*Example:*
+
+```<Route path='/users/:userId' component={SingleUser} />```
+
+<br />
+
+**Find specific user data**
+
+*Example:*
+
+```
+const avenger = 
+
+avengerData.find(avenger => 
+
+props.match.params.id === `${avenger.id}`);
+
+```
