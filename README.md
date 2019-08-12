@@ -1,9 +1,4 @@
-# Jashele's Notes
-Notes from Lambda School.  Study all you need!! 
-
-<br />
-
-# React
+# React Notes
 **Create a React App**
 
 ```
@@ -69,11 +64,12 @@ const StyledA = styled.a``;
 ```
 
 
+<hr />
+
 <br />
 
 
-
-# React Router
+## React Router
 **Add react-router**
 
 ```
@@ -113,14 +109,14 @@ import { Route } from 'react-router-dom';
 ```
 <br />
 
-*Component Prop (example):*
+**Component Prop:**
 
 The component that you want React to mount when the URL matches the requested path. So in our case when /users is requested, the Users component will be mounted.
 ```
+Example:
+
 <Route path="/users"/ component={Users} />
 ```
-
-<br />
 
 **Think of your Route components asking you this question every single time you set one up.**
 
@@ -135,10 +131,6 @@ By placing ```exact``` on a ```<Route />``` component you are saying that the sp
 
 ```
 <Route exact path="/" component={Home}/>
-
-<Route path="/contact" component={Contact}/>
-
-<Route path="/about" component={About}/>
 ```
 
 <br />
@@ -167,13 +159,168 @@ Helps us stay within the realm of our “client-side app.”
 
 **Find specific user data**
 
-*Example:*
-
 ```
+Example:
+
+
 const avenger = 
 
 avengerData.find(avenger => 
 
 props.match.params.id === `${avenger.id}`);
 
+```
+
+<br />
+
+## Pass data to components rendered by React Router via the render prop
+
+
+**Render prop**
+
+A function prop that a component uses to know what to render. React Router uses this pattern to let us pass data to the component we want to render.
+
+```
+<Route render={() => 
+
+<MyComponent 
+
+someProp={someData} 
+
+someOtherProp={moreData} 
+
+/>} />
+```
+<br />
+
+If we still need props - ```match, history, and location``` in our component (and most the time we will), they are actually passed to the function inside render as an argument in an object. 
+
+```
+<Route render={props => 
+
+<MyComponent 
+
+someProp={someData} 
+
+someOtherProp={moreData} 
+
+/>} />
+```
+
+<br />
+
+Now with a ccess to all 3 props:
+
+```
+<Route render={(props) => (
+
+  <MyComponent 
+
+    someProp={someData} 
+
+    someOtherProp={moreData} 
+
+    match={props.match}
+
+    history={props.history}
+
+    location={props.location}
+
+  />
+
+)} />
+```
+<br />
+
+
+**Use spread operator to make the above easier.**
+
+```{...props}``` - will “spread” in all three props that we passed through manually above:
+
+```
+<Route render={(props) => (
+
+  <MyComponent 
+
+    {...props}
+
+    someProp={someData} 
+
+    someOtherProp={moreData} 
+
+  />
+
+)} />
+```
+
+
+<br />
+
+**Add nested routes to an application and display sub-nav views.**
+
+As to not re-render a whole page.
+
+
+```
+Example:
+
+<Route exact path="/" component={Home} />
+
+        <Route
+          path="/avengers/:id"
+          render={props => <AvengerPage {...props} avengers={avengerData} />} />
+
+
+        <Route
+          path="/avengers"
+          render={props => <AvengerList {...props} avengers={avengerData} />}
+        />
+
+
+```
+
+<br />
+
+**Use the built in `history` object to programmatically navigate to other routes.**
+
+ Example: Navigating to a new page after a promise has resolved and new data is available.
+
+```
+ function routeToAvenger() {
+  props.history.push(`/avengers/${avenger.id}`)
+}
+```
+
+
+<br />
+
+
+**`Link` and `NavLink`**
+
+<br />
+
+
+```Link```
+Renders an anchor tag with an href of the path we have specified on it.
+
+
+<br />
+
+```NavLink```
+Adds the class active to the anchor tag when the url matches the path in the NavLink component.
+
+
+```
+import { NavLink } from 'react-router-dom'
+
+<NavLink to="/">Home</NavLink>
+
+<NavLink to="/about">About</NavLink>
+```
+
+
+Navigating to ```about``` would render:
+
+```
+<a href="/about" class="active" aria-current="page">About</a>
 ```
