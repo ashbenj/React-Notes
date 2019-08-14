@@ -1,4 +1,4 @@
-# React Notes
+# Jashele's React Notes
 **Create a React App**
 
 ```
