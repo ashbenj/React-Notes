@@ -80,7 +80,7 @@ const StyledA = styled.a``;
 
 <br />
 
-*In app.js import the BrowserRouter component and wrap your app with it:*
+*In index.js import the BrowserRouter component and wrap your app with it:*
 
 ``` 
 import { BrowserRouter as Router } from 'react-router-dom'; 
