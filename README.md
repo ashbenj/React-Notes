@@ -413,8 +413,13 @@ Formik wants to see a “Yup Schema,” which is basically a description of what
   }),
   //======END VALIDATION SCHEMA==========
   ```
+<br />
 
-## Checking for Errors
+## YUP - Checking for Errors
+
+How do you know if you’ve gotten a bad input after validating it?  Connect validation to your form the following ways. 
+<br /><br />
+
 
   **Props:**
 
@@ -432,3 +437,53 @@ Formik wants to see a “Yup Schema,” which is basically a description of what
 ```
 {touched.email && errors.email && <p>{errors.email}</p>}
  ```
+<br />
+
+ ## YUP - Custom Error Messages
+
+```
+ validationSchema: Yup.object().shape({
+    email: Yup.string()
+      .email("Email not valid")
+      .required("Email is required"),
+    password: Yup.string()
+      .min(6, "Password must be 6 characters or longer")
+      .required("Password is required")
+  }),
+  ```
+
+  All you need to do is add your custom error message into the arguments for the method!
+  <br />  <br />
+  
+<hr />
+
+  ## Make POST requests to pass data collected from a form to a database
+
+   ```POST ``` - the method that allows us to “post” (or create) information on a web server. When a user makes a POST request, that data is usually being added to the server’s database.
+
+   1. Install axios dependency: <br />
+   ```yarn add axios```<br />
+
+   2. import axios alongside our other imports in our Formik form component.<br />
+   ```import axios from "axios";```<br /><br />
+
+   Sample POST request:
+
+```
+   const sentData = { data: "Hello World!" };
+
+axios
+  .post("https://yourdatabaseurlgoeshere.com", sentData)
+  .then(res => {
+    console.log(res.data); // Data was created successfully and logs to console
+  })
+  .catch(err => {
+    console.log(err); // There was an error creating the data and logs to console
+  });
+  ```
+
+  **Facts:**
+  - using a .post() call instead of a .get() after it.<br />
+  -  follow that up with a URL passed in as an argument.<br />
+  - pass in the data that we want to send to our web server as the second argument.<br />
+  - In this example, the data that we’re sending is our sentData variable which is an object. This would be sent to our web server.
