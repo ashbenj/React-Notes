@@ -3,11 +3,13 @@
 
 ```
 // yarn command
+
 yarn create react-app nameOfAppHere
 ```
 
 ```
 // npm command using the npx utility 
+
 npx create-react-app nameOfAppHere
 ```
 
@@ -139,13 +141,16 @@ By placing ```exact``` on a ```<Route />``` component you are saying that the sp
 
 Helps us stay within the realm of our “client-side app.”
 
-```import { Link } from 'react-router-dom'```
+```
+import { Link } from 'react-router-dom'
+```
 
-<br />
 
 *Example:*
 
-```<Link to="/about">About</Link>```
+```
+<Link to="/about">About</Link>
+```
 
 <br />
 
@@ -153,7 +158,9 @@ Helps us stay within the realm of our “client-side app.”
 
 *Example:*
 
-```<Route path='/users/:userId' component={SingleUser} />```
+```
+<Route path='/users/:userId' component={SingleUser} />
+```
 
 <br />
 
@@ -172,6 +179,7 @@ props.match.params.id === `${avenger.id}`);
 ```
 
 <br />
+<hr />
 
 ## Pass data to components rendered by React Router via the render prop
 
@@ -295,16 +303,14 @@ Example:
 <br />
 
 
-**`Link` and `NavLink`**
-
-<br />
+**Link and NavLink**
 
 
 ```Link```
 Renders an anchor tag with an href of the path we have specified on it.
 
-
 <br />
+
 
 ```NavLink```
 Adds the class active to the anchor tag when the url matches the path in the NavLink component.
@@ -324,3 +330,105 @@ Navigating to ```about``` would render:
 ```
 <a href="/about" class="active" aria-current="page">About</a>
 ```
+<br />
+<hr />
+
+## Formik to Control Forms
+
+**Installation**
+```
+npm install formik --save
+```
+
+or
+
+```
+yarn add formik
+```
+<br />
+
+**Import:**
+```
+import { withFormik, Form, Field } from "formik";
+```
+<br />
+
+
+```mapPropsToValues``` allows us to create a connection between the data being handled in the form and the handlers for the data. The conditional values for the key-values allow you to pass in default or custom data to the form initially (great for a ‘change-data’ form, for example).
+
+```
+Example:
+
+
+const FormikLoginForm = withFormik({
+
+  mapPropsToValues({ username, password }) {
+    return {
+      username: username || "",
+      password: password || ""
+    };
+  },
+
+  handleSubmit(values) {
+    console.log(values)
+    //THIS IS WHERE YOU DO YOUR FORM SUBMISSION CODE... HTTP REQUESTS, ETC.
+  }
+
+  )(LoginForm);
+  ```
+<br />
+<hr />
+
+  ## Learn to validate user input in forms
+
+  **Yup dependency**
+
+```
+  yarn add yup or npm install --save yup
+  ```
+
+
+
+**Import**
+
+```
+  import * as Yup from "yup";
+
+// You may see this as (import Yup from 'yup') in some tutorials, the above method seems less buggy
+```
+
+<br />
+
+Formik wants to see a “Yup Schema,” which is basically a description of what each named field is supposed to look like, so that Yup can pass or fail the input.
+
+```
+  //======VALIDATION SCHEMA==========
+  validationSchema: Yup.object().shape({
+    email: Yup.string()
+      .email()
+      .required(),
+    password: Yup.string()
+      .min(6)
+      .required()
+  }),
+  //======END VALIDATION SCHEMA==========
+  ```
+
+## Checking for Errors
+
+  **Props:**
+
+  ```Errors```
+
+  ```
+   {errors.email && <p>{errors.email}</p>}
+   ```
+
+<br />
+
+  ```touched``` - 
+  This prop keeps track of whether you’ve been in this field previously. This makes it possible for you to avoid seeing validation errors as you’re typing into the field the very first time.
+
+```
+{touched.email && errors.email && <p>{errors.email}</p>}
+ ```
