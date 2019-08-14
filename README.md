@@ -306,13 +306,13 @@ Example:
 **Link and NavLink**
 
 
-```Link```
+**Link**<br />
 Renders an anchor tag with an href of the path we have specified on it.
 
 <br />
 
 
-```NavLink```
+**NavLink**<br />
 Adds the class active to the anchor tag when the url matches the path in the NavLink component.
 
 
