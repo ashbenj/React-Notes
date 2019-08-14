@@ -486,4 +486,5 @@ axios
   - using a .post() call instead of a .get() after it.<br />
   -  follow that up with a URL passed in as an argument.<br />
   - pass in the data that we want to send to our web server as the second argument.<br />
-  - In this example, the data that we’re sending is our sentData variable which is an object. This would be sent to our web server.
+  - In this example, the data that we’re sending is our sentData variable which is an object. This would be sent to our web server.<br />
+  -  You will need to initially console.log() the server’s response to find out what kind of data you’re receiving back in your response.
