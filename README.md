@@ -217,7 +217,7 @@ someOtherProp={moreData}
 
 <br />
 
-Now with a ccess to all 3 props:
+Now with access to all 3 props:
 
 ```
 <Route render={(props) => (
