@@ -4,13 +4,13 @@
 ```
 // yarn command
 
-yarn create react-app nameOfAppHere
+create-react-app nameOfAppHere
 ```
 
 ```
 // npm command using the npx utility 
 
-npx create-react-app nameOfAppHere
+create-react-app nameOfAppHere
 ```
 
 <br />
