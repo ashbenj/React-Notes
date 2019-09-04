@@ -1,4 +1,11 @@
 # Jashele's React Notes
+
+
+
+
+
+
+
 **Create a React App**
 
 ```
@@ -13,7 +20,126 @@ create-react-app nameOfAppHere
 create-react-app nameOfAppHere
 ```
 
+
+<br />
+<br />
 <hr />
+
+
+
+
+
+
+
+
+## React Component
+
+
+**React.Component base class**
+
+
+- allows us to tap into Component lifecycle.
+- give us control into how our components work. 
+
+<br />
+
+
+**Build it like this:**
+
+``` 
+class FooComponent extends React.Component {
+
+} 
+``` 
+
+<br />
+
+
+
+**Render:**
+
+- Life-cycle hook
+- Used when we have some data we can render out to the DOM 
+
+
+<br />
+
+
+
+
+
+**A complete component looks like this:**
+
+``` 
+class FooComponent extends React.Component {
+  constructor() { 
+    super();
+    this.state = {};
+  }
+  render() {
+    return <div>Hello, I am Foo Component</div>;
+  }
+} 
+``` 
+
+<br />
+
+
+**Props:**
+
+- The ability to pass & share state around from one component to another. 
+- are read only
+
+
+<br />
+
+
+**State:**
+
+- An object that we have access to which lives on the class component's constructor.
+- When it changes our component will re-render.
+- We can also pass whatever data is found on this state object around as props to other components.
+- When a component’s props are bound to the state of a parent component the child component will re render as well.
+
+<br />
+
+
+<a href="https://codesandbox.io/s/props-hr6rq?fontsize=14" target=_blank>View CodeSandBox example</a>
+
+
+<br />
+
+
+**Event Handling**
+
+Synthetic Event - how we interact with the DOM within the React Virtual DOM ecosystem.
+
+- onClick 
+- onDoubleClick 
+- onMouseEnter 
+- onChange
+
+
+<br />
+
+<a href="https://codesandbox.io/s/pik2o" target=_blank>View CodeSandBox example</a>
+
+
+
+
+
+
+<br />
+<br />
+<hr />
+
+
+
+
+
+
+
+
 
 ## Styling
 
