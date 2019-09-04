@@ -13,7 +13,9 @@ create-react-app nameOfAppHere
 create-react-app nameOfAppHere
 ```
 
-<br />
+<hr />
+
+## Styling
 
 
 **Semantic UI**
@@ -473,7 +475,7 @@ How do you know if you’ve gotten a bad input after validating it?  Connect val
    2. import axios alongside our other imports in our Formik form component.<br />
    ```import axios from "axios";```<br /><br />
 
-   
+
 
    **Sample POST request:**
 
