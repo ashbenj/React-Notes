@@ -102,10 +102,13 @@ class FooComponent extends React.Component {
 - When a component’s props are bound to the state of a parent component the child component will re render as well.
 
 
-<a href="https://codesandbox.io/s/props-hr6rq?fontsize=14" target=_blank>View CodeSandBox example</a>
-
-
 <br />
+(https://codesandbox.io/s/props-hr6rq?fontsize=14 "See code example")
+
+
+
+
+<br /><br />
 
 
 **Event Handling**
@@ -119,9 +122,8 @@ Synthetic Event - how we interact with the DOM within the React Virtual DOM ecos
 
 
 
-<a href="https://codesandbox.io/s/pik2o" target=_blank>View CodeSandBox example</a>
-
-
+<br />
+(https://codesandbox.io/s/eventhandlers-react-pik2o?fontsize=14 "See Code Example)
 
 
 
