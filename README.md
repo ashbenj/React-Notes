@@ -101,8 +101,6 @@ class FooComponent extends React.Component {
 - We can also pass whatever data is found on this state object around as props to other components.
 - When a component’s props are bound to the state of a parent component the child component will re render as well.
 
-<br />
-
 
 <a href="https://codesandbox.io/s/props-hr6rq?fontsize=14" target=_blank>View CodeSandBox example</a>
 
@@ -120,7 +118,6 @@ Synthetic Event - how we interact with the DOM within the React Virtual DOM ecos
 - onChange
 
 
-<br />
 
 <a href="https://codesandbox.io/s/pik2o" target=_blank>View CodeSandBox example</a>
 
