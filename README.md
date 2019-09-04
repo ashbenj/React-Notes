@@ -423,7 +423,7 @@ How do you know if you’ve gotten a bad input after validating it?  Connect val
 
   **Props:**
 
-Errors
+ ``` Errors  ``` - 
 
  ```
    { errors.email && <p>{errors.email}</p> }
@@ -431,7 +431,7 @@ Errors
 
 <br />
 
-  ```touched``` - 
+  ``` Touched ``` - 
 
   This prop keeps track of whether you’ve been in this field previously. This makes it possible for you to avoid seeing validation errors as you’re typing into the field the very first time.
 
@@ -441,7 +441,7 @@ Errors
 
 <br />
 
- ## YUP - Custom Error Messages
+## YUP - Custom Error Messages
 
  ```
  validationSchema: Yup.object().shape({
@@ -463,7 +463,7 @@ Errors
 
 
 
-  ## Make POST requests to pass data collected from a form to a database
+## Make POST requests to pass data collected from a form to a database
 
    ```POST ``` - the method that allows us to “post” (or create) information on a web server. When a user makes a POST request, that data is usually being added to the server’s database.
 
@@ -473,7 +473,9 @@ Errors
    2. import axios alongside our other imports in our Formik form component.<br />
    ```import axios from "axios";```<br /><br />
 
-   Sample POST request:
+   
+
+   **Sample POST request:**
 
 ```
    const sentData = { data: "Hello World!" };
