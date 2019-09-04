@@ -423,25 +423,27 @@ How do you know if you’ve gotten a bad input after validating it?  Connect val
 
   **Props:**
 
-  ```Errors```
+Errors
 
+ ```
+   { errors.email && <p>{errors.email}</p> }
   ```
-   {errors.email && <p>{errors.email}</p>}
-   ```
 
 <br />
 
   ```touched``` - 
+
   This prop keeps track of whether you’ve been in this field previously. This makes it possible for you to avoid seeing validation errors as you’re typing into the field the very first time.
 
-```
-{touched.email && errors.email && <p>{errors.email}</p>}
  ```
+{ touched.email && errors.email && <p>{errors.email}</p> }
+ ```
+
 <br />
 
  ## YUP - Custom Error Messages
 
-```
+ ```
  validationSchema: Yup.object().shape({
     email: Yup.string()
       .email("Email not valid")
@@ -450,12 +452,16 @@ How do you know if you’ve gotten a bad input after validating it?  Connect val
       .min(6, "Password must be 6 characters or longer")
       .required("Password is required")
   }),
-  ```
+ ```
 
   All you need to do is add your custom error message into the arguments for the method!
+
   <br />  <br />
+
   
 <hr />
+
+
 
   ## Make POST requests to pass data collected from a form to a database
 
