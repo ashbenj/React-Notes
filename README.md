@@ -379,7 +379,7 @@ const FormikLoginForm = withFormik({
 <br />
 <hr />
 
-  ## Learn to validate user input in forms
+## Learn to validate user input in forms
 
   **Yup dependency**
 
@@ -456,7 +456,7 @@ Errors
 
   All you need to do is add your custom error message into the arguments for the method!
 
-  <br />  <br />
+
 
   
 <hr />
