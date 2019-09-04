@@ -357,11 +357,11 @@ import { withFormik, Form, Field } from "formik";
 
 
 ```mapPropsToValues``` allows us to create a connection between the data being handled in the form and the handlers for the data. The conditional values for the key-values allow you to pass in default or custom data to the form initially (great for a ‘change-data’ form, for example).
+<br /><br />
+
+**Example:**
 
 ```
-Example:
-
-
 const FormikLoginForm = withFormik({
 
   mapPropsToValues({ username, password }) {
