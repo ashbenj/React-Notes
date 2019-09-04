@@ -103,7 +103,9 @@ class FooComponent extends React.Component {
 
 
 <br />
-(https://codesandbox.io/s/props-hr6rq?fontsize=14 "See code example")
+
+
+[see example](https://codesandbox.io/s/props-hr6rq?fontsize=14)
 
 
 
@@ -123,7 +125,8 @@ Synthetic Event - how we interact with the DOM within the React Virtual DOM ecos
 
 
 <br />
-(https://codesandbox.io/s/eventhandlers-react-pik2o?fontsize=14 "See Code Example)
+
+[see example](https://codesandbox.io/s/eventhandlers-react-pik2o?fontsize=14)
 
 
 
