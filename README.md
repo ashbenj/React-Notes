@@ -74,10 +74,12 @@ class App extends React.Component {
 class App extends React.Component {
   constructor() { 
     super();
-    this.state = {};
+    this.state = {
+      message: "Hello, I am a Component"
+    };
   }
   render() {
-    return <div>Hello, I am Foo Component</div>;
+    return <div>Hello, I am a Component</div>;
   }
 } 
 ``` 
