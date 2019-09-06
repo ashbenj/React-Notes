@@ -55,8 +55,9 @@ class App extends React.Component {
 <br />
 
 
-
-```render()```
+```
+render()
+```
 
 - Life-cycle hook
 - Used when we have some data we can render out to the DOM 
