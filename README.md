@@ -40,17 +40,18 @@ A JavaScript library for building user interfaces.
 
 ## Basic Information
 
-When starting any React file, this code goes at the header:
+<br />
 
-```
-import React from 'react';
-```
+When starting any React file, add the following the header:
+
+`import React from 'react';`
+
 
 <br />
 
-Anatomy of a React component:
+**Anatomy of a React component:**
 
-```
+``` 
 const Component = () => {
   return (
     <div>
