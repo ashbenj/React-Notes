@@ -98,18 +98,66 @@ useState hook <br />
 <br />
 
 
+- ## Skeletons
+
+**App.js**
+```
+import React from "react";
+
+function App() {
+
+  return (
+    <>
+     
+     <h1>JSX</h1>
+    <Component />
+
+    </>
+
+  );
+}
+
+export default App;
+```
 
 
-- ## Conditional Rendering: if statements for React.
-
-Example:
-
-`{lightOn === false ? <img src={white} /> : <img src={yellow} />}`
+<br />
+<br />
 
 
+**Index.js**
+```
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+
+ReactDOM.render(<App />, document.getElementById('root'));
+```
+
+
+<br />
+<br />
 
 
 
+**Component**
+```
+import React from 'react';
+
+const Component = () => {
+  return (
+    <>
+      <h1>I'm a React Component!</h1>
+    </>
+  );
+};
+
+export default Component;
+```
+
+
+<br />
 <br />
 
 
@@ -124,5 +172,5 @@ Example:
 
 
 
-Skeleton for app.js file
+
 
