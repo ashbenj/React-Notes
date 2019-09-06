@@ -44,10 +44,10 @@ create-react-app nameOfAppHere
 <br />
 
 
-**Build it like this:**
+**Build:**
 
 ``` 
-class FooComponent extends React.Component {
+class App extends React.Component {
 
 } 
 ``` 
@@ -56,7 +56,7 @@ class FooComponent extends React.Component {
 
 
 
-**Render:**
+```render()```
 
 - Life-cycle hook
 - Used when we have some data we can render out to the DOM 
@@ -71,7 +71,7 @@ class FooComponent extends React.Component {
 **A complete component looks like this:**
 
 ``` 
-class FooComponent extends React.Component {
+class App extends React.Component {
   constructor() { 
     super();
     this.state = {};
