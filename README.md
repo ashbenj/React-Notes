@@ -48,7 +48,7 @@ When starting any React file, add the following the header:
 
 <br /><br />
 
-
+<hr />
 
 
 
@@ -66,6 +66,7 @@ const Component = () => {
 
 
 <br />
+<hr />
 
 
 
@@ -96,6 +97,7 @@ useState hook <br />
 
 
 <br />
+<hr />
 
 
 - ## Skeletons
@@ -172,6 +174,7 @@ export default Component;
 
 <br />
 <br />
+<hr />
 
 
 - ## React Class Component
@@ -197,6 +200,8 @@ class App extends React.Component {
 
 <br />
 <br />
+
+<hr />
 
 
 - ## Event Handlers
@@ -238,7 +243,7 @@ Mouse handler usage:
 
 <br />
 
-## Here's a cool event handler sample if you wanted to change something: 
+## Here's a cool event handler sample if you wanted to change the value of something: 
 
 **Set an empty string in state:**
 
@@ -253,7 +258,7 @@ Mouse handler usage:
 
 <br />
 
-**Usage:**
+**The state would change based on new value:**
 
 ```
 changeHandler = event => {
