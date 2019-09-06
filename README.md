@@ -100,7 +100,7 @@ useState hook <br />
 
 - ## Skeletons
 
-**App.js**
+**App.js - begin a new app file**
 ```
 import React from "react";
 
@@ -125,7 +125,7 @@ export default App;
 <br />
 
 
-**Index.js**
+**Index.js - begin a new index file**
 ```
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -141,7 +141,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
 
 
 
-**Component**
+**Component - begin a new component file**
 ```
 import React from 'react';
 
