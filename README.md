@@ -163,11 +163,113 @@ export default Component;
 
 
 
-### Sample Projects:
+### Sample Demos:
 
-<a href="https://codesandbox.io/s/light-bulb-state-9ovk4?fontsize=14" target=_blank>LightBulb Project</a> 
+- <a href="https://codesandbox.io/s/light-bulb-state-9ovk4?fontsize=14" target=_blank>LightBulb Project</a> 
 
-<a href="https://github.com/jasheloper/react-american-football-scoreboard/tree/jashele-tillman" target=_blank>American Football Scorecard Project</a>
+- <a href="https://github.com/jasheloper/react-american-football-scoreboard/tree/jashele-tillman" target=_blank>American Football Scorecard Project</a>
+
+
+<br />
+<br />
+
+
+- ## React Class Component
+
+```
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = { 
+        message: "Hello from App State!!"
+};
+  }
+  render() {
+  return <div>{this.state.message}</div>;
+}
+```
+
+<br />
+
+### Sample Demos:
+
+- <a href="https://codesandbox.io/embed/propscomponents-hr6rq" target=_blank>Props / Class Components Project</a>
+
+<br />
+<br />
+
+
+- ## Event Handlers
+
+**Button Example:**
+
+Click handler code:
+```
+singleClickHandler = () => alert("Single Click!");
+```
+
+<br />
+
+
+
+
+Click handler usage:
+```
+<button onClick={this.singleClickHandler}>Click Handler Demo</button>
+```
+
+<br />
+<br />
+
+**DIV Example:**
+
+Mouse handler code:
+
+```
+mouseEnterHandler = () => alert("Mouse Entered");
+```
+
+<br />
+
+Mouse handler usage:
+```
+<div onMouseEnter={this.mouseEnterHandler}>Mouse Enter</div>
+```
+
+<br />
+
+## Here's a cool event handler sample if you wanted to change something: 
+
+**Set an empty string in state:**
+
+```
+  constructor() {
+    super();
+    this.state = {
+      someValue: '',
+    }
+  }
+  ```
+
+<br />
+
+**Usage:**
+
+```
+changeHandler = event => {
+  this.setState({someValue: event.target.value});
+};
+```
+
+<br />
+
+### Sample Demos:
+
+- <a href="https://codesandbox.io/embed/eventhandlers-react-pik2o" target=_blank>Event Handlers Project</a>
+
+
+
+
 
 
 
