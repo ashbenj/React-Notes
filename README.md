@@ -91,6 +91,32 @@ class App extends React.Component {
 
 <br />
 
+**If you want to put it in its own component, make a component file .js and then:**
+
+```
+const WelcomeBanner = props => <h1>Hello, {props.message}!</h1>;
+```
+
+
+**Then in app.js**
+
+```
+...
+
+render() {
+  return (
+    <div>
+      <WelcomeBanner message={this.state.welcomeMessage} />
+    </div>
+  );
+}
+
+...
+```
+
+*Passing props around*
+
+<br />
 
 **Props:**
 
