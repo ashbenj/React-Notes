@@ -1,8 +1,7 @@
 ## React Notes - By Jashele Tillman
 
-Contact Me:
 
-<a href="https://www.linkedin.com/" target=_blank>
+<a href="https://www.linkedin.com/in/jashelet/" target=_blank>
 <img src="images/linkedin.png" alt="Contact Jashele on LinkedIn"> </a><a href="https://twitter.com/jasheloper" target=_blank>
 <img src="images/twitter.png" alt="Contact Jashele on Twitter"></a><a href="mailto:jtmediaaccts@gmail.com">
 <img src="images/email.png" alt="Contact Jashele via Email"></a>
@@ -14,7 +13,7 @@ Contact Me:
 **My Blog:** <a href="https://jashele.blog/" target=_blank>Jashele.Blog</a>
 
 <br />
-<hr />
+
 
 
 
@@ -29,7 +28,7 @@ A JavaScript library for building user interfaces.
 
 
 <br />
-<hr />
+
 
 
 
