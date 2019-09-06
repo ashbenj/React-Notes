@@ -72,16 +72,21 @@ class App extends React.Component {
 
 ``` 
 class App extends React.Component {
-  constructor() { 
+  constructor() {
     super();
     this.state = {
-      message: "Hello, I am a Component"
+      welcomeMessage: 'world!'
     };
   }
+
   render() {
-    return <div>Hello, I am a Component</div>;
+    return (
+      <div>
+        <h1>Hello, {this.state.welcomeMessage}!</h1>
+      </div>
+    );
   }
-} 
+}
 ``` 
 
 <br />
