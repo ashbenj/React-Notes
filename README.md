@@ -42,7 +42,16 @@ A JavaScript library for building user interfaces.
 
 When starting any React file, add the following the header:
 
-`import React from 'react';`
+```
+import React from 'react';
+```
+<br />
+
+`render`  tells react what will be mounted to the screen.
+- called in the mounting phase & the updating phase.
+<br /><br />
+
+`constructor` function serves the component up with the initial state data that it needs to have during initial render.
 
 
 
@@ -195,6 +204,8 @@ class App extends React.Component {
 <br />
 
 ### Sample Demos:
+
+- <a href="https://codesandbox.io/embed/friends-betjt" target=_blank>Friends Project</a>
 
 - <a href="https://codesandbox.io/embed/propscomponents-hr6rq" target=_blank>Props / Class Components Project</a>
 
