@@ -40,6 +40,22 @@ A JavaScript library for building user interfaces.
 
 ## Some Basic Stuff
 
+Creating a new React app, type this into the terminal:
+
+```
+npx create-react-app my-app
+```
+
+then... <br />
+```
+cd my-app
+```
+
+then...
+`yarn` and then `yarn start`
+
+<br />
+
 When starting any React file, add the following the header:
 
 ```
