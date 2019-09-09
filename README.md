@@ -664,7 +664,8 @@ function Shop() {
 
 
 
-            // WHAT IF YOU WANT TO ADD A LINK TO EACH ITEM??  WE CAN USE DYNAMIC ROUTING TO GO TO THE UNIQUE ITEM'S LINK (ID). //
+            // WHAT IF YOU WANT TO ADD A LINK TO EACH ITEM??  
+            WE CAN USE DYNAMIC ROUTING TO GO TO THE UNIQUE ITEM'S LINK (ID). //
 
                     <Link to={`/shop/${item.itemid}`}>{item.name}</Link>
           ))}
@@ -703,7 +704,7 @@ import {Link} from 'react-router-dom';
 import './App.css';
 
 
-function Item() {
+function ItemDetail({match}) {
 
 
 
@@ -711,11 +712,10 @@ function Item() {
 // useEffect() TO RUN THIS & THE [ ] MEANS THIS WILL ONLY RUN WHEN THE COMPONENT MOUNTS //
 
 
-    useEffect(() => {
-
-      
-
-    }, []);
+   useEffect(() => {
+     fetchItem();
+     
+   }, []);
 
 
 
@@ -723,7 +723,24 @@ function Item() {
 
 // CREATE A STATE TO PUT THOSE ITEMS IN 
 
-  const [item, setItem] = useState({});
+  const [item, setItem] = useState({
+    
+    images: {}
+    
+  });
+
+
+
+  const fetchItem = async () => {
+    const fetchItem = await fetch(`https://fortnite-public-api.theapinetwork.com/prod09/upcoming/get?ids=61ea3e9-8438e42-f53`)
+    const item = await fetchItem.json();
+
+
+
+  // SET ITEM TO OUR ITEM THAT WE'RE GETTING BACK //
+    setItem(item);
+    console.log(item);
+  }
 
 
 
@@ -732,7 +749,9 @@ function Item() {
     return (
         <div>
 
-          <h1>Item</h1>
+          <h1>{item.name}</h1>
+
+          <img src={item.images.transparent} alt="" />
 
         </div>
     );
@@ -758,8 +777,32 @@ We also need to change the shop route to `exact` so the dynamic route will work 
 ```
 
 
+<br />
+<br />
 
 
+If we do curly braces we get access to `match`.<br />
+
+Instead of: 
+
+```
+const fetchItem = await fetch(`https://fortnite-public-api.theapinetwork.com/prod09/upcoming/get?ids=61ea3e9-8438e42-f53`)
+```
+
+<br />
+
+We can simply add `${match.params.id}` after the id.
+
+```
+const fetchItem = await fetch(`https://fortnite-public-api.theapinetwork.com/prod09/upcoming/get?ids=${match.params.id}`)
+```
+
+Now we have access to the unique id of each item.
+
+<br />
+
+
+- <a href="https://youtu.be/Law7wfdg_ls?t=1787" target=_blank>Video tutorial that explains match</a>
 
 
 
