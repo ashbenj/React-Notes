@@ -135,7 +135,7 @@ export default App;
 
 
 
-## Let's talk about PROPS
+## Let's talk about PROPS---
 
 
 **What is a prop?** <br />
@@ -154,6 +154,213 @@ We can add a name on it like so: <br />
 ```
 <Tweet name="Jashele"/>
 ```
+
+<br />
+
+If you want to use the component again, you can with different names like:
+
+```
+<Tweet name="Tillman"/>
+<Tweet name="Hello"/>
+<Tweet name="Goodbye"/>
+```
+
+<br />
+
+So, you would then go into the actual component file - *Tweet.js* and then add 'props':
+
+
+```
+function Tweet(props) {
+
+  return(
+
+    <div className="tweet">
+
+        <h3>{props.name}</h3>
+
+    </div>
+  );
+}
+```
+
+<br />
+
+You will see 'props' in the function parameter and then you see *'props.name'* in the h3. <br /><br /> 
+**Name** is what we called the property, remember? 
+
+<br />
+
+We can add as many props to the component as we want to:<br />
+
+```
+<Tweet name="Jashele" message="This is a random tweet."/>
+```
+<br />
+
+
+```
+function Tweet(props) {
+
+  return(
+
+    <div className="tweet">
+
+        <h3>{props.name}</h3>
+
+        <p>{props.message}</p>
+
+    </div>
+  );
+}
+```
+
+<br />
+
+
+If you don't want to do props, you can deconstruct by doing this:
+
+```
+function Tweet({name, message}) {
+
+  return(
+
+    <div className="tweet">
+
+        <h3>{name}</h3>
+
+        <p>{message}</p>
+
+    </div>
+  );
+}
+```
+
+<hr />
+<br />
+
+
+## Let's talk about State---
+
+**State** - data, a variable, the app renders itself based on that data. <br /><br />
+  Based on the state, the app changes.
+
+
+<br />
+
+**Example, state will change based on button click:**
+
+
+  ```
+  import React, {useState} from "react";
+  
+
+  function App() {
+
+    const [isRed, setRed] = useState(false);
+    const [count, setCount] = useState(0);
+
+
+
+    const increment = () => {
+      setCount(count + 1);
+      setRed(!isRed);
+    };
+
+
+
+    return (
+
+      <div className="app">
+
+      <h1 className={isRed ? 'red' : ""}>Change my color!</h1>
+
+      <button onClick={increment}>Increment</button>
+
+      <h1>{count}</h1>
+
+      </div>
+
+    );
+  }
+  ```
+
+
+<br />
+
+```
+<h1 className={isRed ? 'red' : ""}>Change my color!</h1>
+```
+
+This is an if/else statement in React.
+
+<br />
+<br />
+
+
+
+
+
+**State with an Object:**
+
+```
+ import React, {useState} from "react";
+  
+
+  function App() {
+
+    const [users, setUser] = useState([
+      {name: 'Jashele', message: 'Hello there'},
+      {name: 'John', message: 'I am John Snow'},
+      {name: 'Traversy', message: 'I am awesome'}
+    ]);
+
+
+
+    return (
+
+      <div className="app">
+
+      {users.map(user => (
+        <Tweet name={user.name} message={user.message} />
+      ))}
+
+      </div>
+
+    );
+  }
+```
+
+<br />
+
+Remember our **Tweet** component example? <br />
+Yeah, we're just returning that for each user now.
+
+
+<br />
+<br />
+
+**Resource:**
+
+  - <a href="https://youtu.be/dGcsHMXbSOA?t=1926" target=_blank>Video tutorial on State</a>
+  - <a href="https://youtu.be/dGcsHMXbSOA?t=2396" target=_blank>Video Tutorial on State with an Object</a> (And also when you're getting data from an API)
+
+
+
+<hr />
+<br />
+
+
+
+  ## React Router
+
+
+  Install: <br />
+
+```
+  npm install react-router-dom
+```
+
 
 
 
