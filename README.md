@@ -16,6 +16,17 @@ This is just a reference guide that I can easily refer back to.  This is not int
 **My Blog:** <a href="https://jashele.blog/" target=_blank>Jashele.Blog</a>
 
 <br />
+<br />
+<br />
+
+
+
+
+
+
+
+
+
 
 
 
@@ -27,11 +38,12 @@ This is just a reference guide that I can easily refer back to.  This is not int
 
 # What is React?
 
-A JavaScript library for building user interfaces.
+- A JavaScript library for building user interfaces.
 
 
 <br />
-<hr />
+<br />
+<br />
 
 
 
@@ -41,7 +53,10 @@ A JavaScript library for building user interfaces.
 
 
 
-## The Basics
+
+
+
+# The Basics
 
 Creating a new React app, type this into the terminal:
 
@@ -104,10 +119,10 @@ import React from "react";
 
 
 function App() {
-  return (
-    <div>
-      <h1>Hello React</h1>
-    </div>
+      return (
+        <div>
+          <h1>Hello React</h1>
+        </div>
   );
 }
 
@@ -124,7 +139,9 @@ export default App;
 
 
 
-<hr />
+
+<br />
+<br />
 <br />
 
 
@@ -135,11 +152,14 @@ export default App;
 
 
 
-## Let's talk about PROPS---
+
+
+
+# Let's talk about PROPS---
 
 
 **What is a prop?** <br />
-A property that we can define on each individual component.<br /><br />
+- A property that we can define on each individual component.<br /><br />
 
 So, let's say we have a component called 'Tweet' that we've imported into the app.js file.
 <br />
@@ -175,19 +195,19 @@ function Tweet(props) {
 
   return(
 
-    <div className="tweet">
+      <div className="tweet">
 
-        <h3>{props.name}</h3>
+          <h3>{props.name}</h3>
 
-    </div>
+      </div>
   );
 }
 ```
 
 <br />
 
-You will see 'props' in the function parameter and then you see *'props.name'* in the h3. <br /><br /> 
-**Name** is what we called the property, remember? 
+- You will see that 'props' has been added to the function's parameter and then you see *'props.name'* in the h3. 
+- **Name** is what we called the property, remember? 
 
 <br />
 
@@ -204,13 +224,13 @@ function Tweet(props) {
 
   return(
 
-    <div className="tweet">
+        <div className="tweet">
 
-        <h3>{props.name}</h3>
+              <h3>{props.name}</h3>
 
-        <p>{props.message}</p>
+              <p>{props.message}</p>
 
-    </div>
+        </div>
   );
 }
 ```
@@ -225,30 +245,48 @@ function Tweet({name, message}) {
 
   return(
 
-    <div className="tweet">
+        <div className="tweet">
 
-        <h3>{name}</h3>
+                <h3>{name}</h3>
 
-        <p>{message}</p>
+                <p>{message}</p>
 
-    </div>
+        </div>
   );
 }
 ```
 
-<hr />
+
+<br />
+<br />
 <br />
 
 
-## Let's talk about State---
 
-**State** - data, a variable, the app renders itself based on that data. <br /><br />
-  Based on the state, the app changes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Let's talk about State---
+
+**State** 
+- data, a variable, the app renders itself based on that data. 
+- Based on the state, the app changes.
 
 
 <br />
 
-**Example, state will change based on button click:**
+**Example, state will change based on button click.  This is an example component using state:**
 
 
   ```
@@ -257,14 +295,14 @@ function Tweet({name, message}) {
 
   function App() {
 
-    const [isRed, setRed] = useState(false);
-    const [count, setCount] = useState(0);
+        const [isRed, setRed] = useState(false);
+        const [count, setCount] = useState(0);
 
 
 
-    const increment = () => {
-      setCount(count + 1);
-      setRed(!isRed);
+        const increment = () => {
+          setCount(count + 1);
+          setRed(!isRed);
     };
 
 
@@ -273,11 +311,11 @@ function Tweet({name, message}) {
 
       <div className="app">
 
-      <h1 className={isRed ? 'red' : ""}>Change my color!</h1>
+            <h1 className={isRed ? 'red' : ""}>Change my color!</h1>
 
-      <button onClick={increment}>Increment</button>
+            <button onClick={increment}>Increment</button>
 
-      <h1>{count}</h1>
+            <h1>{count}</h1>
 
       </div>
 
@@ -310,22 +348,22 @@ This is an if/else statement in React.
   function App() {
 
     const [users, setUser] = useState([
-      {name: 'Jashele', message: 'Hello there'},
-      {name: 'John', message: 'I am John Snow'},
-      {name: 'Traversy', message: 'I am awesome'}
+          {name: 'Jashele', message: 'Hello there'},
+          {name: 'John', message: 'I am John Snow'},
+          {name: 'Traversy', message: 'I am awesome'}
     ]);
 
 
 
     return (
 
-      <div className="app">
+          <div className="app">
 
-      {users.map(user => (
-        <Tweet name={user.name} message={user.message} />
-      ))}
+                {users.map(user => (
+                  <Tweet name={user.name} message={user.message} />
+                ))}
 
-      </div>
+          </div>
 
     );
   }
@@ -334,7 +372,7 @@ This is an if/else statement in React.
 <br />
 
 Remember our **Tweet** component example? <br />
-Yeah, we're just returning that for each user now.
+Yeah, we're just returning that for each user now using .map
 
 
 <br />
@@ -347,12 +385,19 @@ Yeah, we're just returning that for each user now.
 
 
 
-<hr />
+<br />
+<br />
 <br />
 
 
 
-  ## React Router
+
+
+
+
+
+
+  # React Router
 
 
   Install: <br />
@@ -361,6 +406,190 @@ Yeah, we're just returning that for each user now.
   npm install react-router-dom
 ```
 
+<br />
+
+Importing to your React file:
+<br />
+
+
+```
+import {BrowserRouter as Router, Switch, Route} 'react-router-dom'; 
+```
+
+<br />
+
+- Importing *BrowserRouter* as *Router* means you're renaming the default **BrowserRouter** to **Router**.  This is what handles routing.
+- You must wrap your components in `<Router>` that you want to have the routing funcionality to be available in.  
+
+
+
+<br />
+
+
+
+
+- ## Route:
+
+`Route` renders out the component based on the URL.
+
+
+```
+function App() {
+
+        <Router>
+
+            <div className="App">
+
+                <Nav />
+
+                <Route path "/" component={Home}>
+
+                <Route path="/about" component={About} />
+
+                <Route path="/shop" component={Shop} />
+
+            <div>
+
+      </Router>
+
+}
+```
+
+
+<br /><br />
+
+
+- ## Switch:
+`Switch` stops the route from going further & only renders out that component you're trying to go to. <br />
+
+
+```
+function App() {
+
+        <Router>
+
+            <div className="App">
+
+                <Nav />
+
+                <Switch>
+
+                <Route path "/" component={Home}>
+
+                <Route path="/about" component={About} />
+
+                <Route path="/shop" component={Shop} />
+
+                 </Switch>
+
+            <div>
+
+      </Router>
+
+}
+```
+
+<br />
+
+As soon as it detects say... `/about` or `/shop`  the route will stop so that it won't render out every component with a `/`.
+
+<br />
+
+
+- ## Exact:
+
+`Exact` specifies path.
+
+
+```
+function App() {
+
+        <Router>
+
+            <div className="App">
+
+                <Nav />
+
+                <Switch>
+
+                <Route path "/" exact component={Home}>
+
+                <Route path="/about" component={About} />
+
+                <Route path="/shop" component={Shop} />
+
+                 </Switch>
+
+            <div>
+
+      </Router>
+
+}
+```
+
+<br />
+
+
+In the above example example that demonstrates a **Nav** component you would go into that file and import `Link`: <br />
+
+```
+import {Link} from 'react-router-dom';
+
+function Nav() {
+  return (
+
+    const navStyle = {
+      color: 'white'
+    };
+
+
+
+      <nav>
+        <h3>Logo<h3>
+                  <ul className="nav-links">
+
+                            <Link style={navStyle} to='/about'>
+
+                              <li>About</li>
+
+                              </Link>
+
+
+
+
+                            <Link style={navStyle}  to='/shop'>
+
+                              <li>Shop</li>
+
+                              </Link>
+
+
+                    </ul>
+          </nav>
+    )
+}
+
+export default Nav;
+```
+
+<br />
+
+
+- Wrap the links with `<Link>`.
+- `<Link>` takes 1 prop called `to` which is where you put the route.
+- `navStyle` has also been added which adds styling to the links.
+
+
+
+<br />
+<br />
+
+
+**Resources:**
+
+
+- <a href="https://youtu.be/Law7wfdg_ls?t=297" target=_blank>Tutorial that explains routing & a walk-through</a>
+- <a href="https://youtu.be/Law7wfdg_ls?t=1007" target=_blank>Create Dynamic Routes tutorial</a>
 
 
 
@@ -369,9 +598,9 @@ Yeah, we're just returning that for each user now.
 
 
 
-
-
-
+<br />
+<br />
+<br />
 
 
 
