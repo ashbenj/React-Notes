@@ -295,10 +295,14 @@ function Tweet({name, message}) {
 
   function App() {
 
+    
+    /// SET STATE ///
+
         const [isRed, setRed] = useState(false);
         const [count, setCount] = useState(0);
 
 
+    /// VARIABLES CALLING STATE /// 
 
         const increment = () => {
           setCount(count + 1);
@@ -346,6 +350,9 @@ This is an if/else statement in React.
   
 
   function App() {
+
+
+ ///  MOST OF THE TIME THIS DATA WILL COME FROM AN API... OR SOMETHING   ///
 
     const [users, setUser] = useState([
           {name: 'Jashele', message: 'Hello there'},
@@ -578,6 +585,183 @@ export default Nav;
 - Wrap the links with `<Link>`.
 - `<Link>` takes 1 prop called `to` which is where you put the route.
 - `navStyle` has also been added which adds styling to the links.
+
+
+
+<br />
+<br />
+
+
+
+## Dynamic Routing
+
+
+Example: <br />
+Editing the shop.js component -- 
+<br />
+
+```
+import React, {useState, useEffect} from 'react';
+import {Link} from 'react-router-dom';
+import './App.css';
+
+
+function Shop() {
+
+
+
+
+// useEffect() TO RUN THIS & THE [ ] MEANS THIS WILL ONLY RUN WHEN THE COMPONENT MOUNTS //
+
+
+    useEffect(() => {
+
+        fetchItems();
+
+    }, []);
+
+
+
+
+
+// CREATE A STATE TO PUT THOSE ITEMS IN 
+
+  const [items, setItems] = useState([]);
+
+
+
+
+
+// CREATE A FETCH CALL //
+
+
+    const fetchItems = async () => {
+
+          const data = await fetch('https://fortnite-public-api.theapinetwork.com/prod09/upcoming/get');
+    }
+
+
+
+
+// CONVERTING ITEMS TO JSON TO MAKE THE ITEMS EASIER TO READ IN THE CONSOLE // 
+
+    const items = await data.json();
+
+   
+// YOU CAN SET ITEMS TO THE ITEMS THAT WE'RE GETTING BACK // 
+    console.log(items.items)
+    setItems(items.items)
+
+
+
+    return (
+        <div>
+
+        /// HERE WE CAN RENDER OUT STUFF FROM THE API ///
+
+          {items.map(item => (
+            <h1 key={item.itemid}>{item.name}</h1>
+
+
+
+            // WHAT IF YOU WANT TO ADD A LINK TO EACH ITEM??  WE CAN USE DYNAMIC ROUTING TO GO TO THE UNIQUE ITEM'S LINK (ID). //
+
+                    <Link to={`/shop/${item.itemid}`}>{item.name}</Link>
+          ))}
+         
+         
+
+        </div>
+    );
+}
+
+export default Shop;
+```
+
+<br />
+
+The links above will not route anywhere, so we would need to go back into `App.js` and create more routes:
+<br />
+<br />
+
+The dynamic routing way:
+
+```
+<Route path="/shop/:id" />
+```
+
+<br />
+
+
+And you would also need to create a component for it:<br />
+For example: *itemdetail.js*
+
+
+```
+import React, {useState, useEffect} from 'react';
+import {Link} from 'react-router-dom';
+import './App.css';
+
+
+function Item() {
+
+
+
+
+// useEffect() TO RUN THIS & THE [ ] MEANS THIS WILL ONLY RUN WHEN THE COMPONENT MOUNTS //
+
+
+    useEffect(() => {
+
+      
+
+    }, []);
+
+
+
+
+
+// CREATE A STATE TO PUT THOSE ITEMS IN 
+
+  const [item, setItem] = useState({});
+
+
+
+
+
+    return (
+        <div>
+
+          <h1>Item</h1>
+
+        </div>
+    );
+}
+
+export default Item;
+```
+
+<br />
+
+The new route in app.js should be:
+
+```
+<Route path="/shop/:id" component={ItemDetail}>
+```
+
+<br />
+
+We also need to change the shop route to `exact` so the dynamic route will work otherwise it'll stop routing at shop:
+
+```
+<Route path="/shop" exact component={Shop}>
+```
+
+
+
+
+
+
 
 
 
