@@ -985,7 +985,6 @@ const CustomForm = () => {
 You'll achieve a more powerful hook with multiple pieces of stateful logic.
 
 
-<br />
 
 ### For example:
 
