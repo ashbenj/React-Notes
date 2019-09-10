@@ -404,6 +404,54 @@ Yeah, we're just returning that for each user now using .map
 
 
 
+
+
+
+
+
+
+# State: Part II
+
+
+**Resources:**
+<br />
+- <a href="https://youtu.be/35lXWvCuM8o?t=103" target=_blank>More About State Explained - Movie List Example</a>
+- <a href="https://youtu.be/35lXWvCuM8o?t=812" target=_blank>Context Component [.Provider] instead of props</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br />
+<br />
+<br />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   # React Router
 
 
@@ -726,7 +774,7 @@ function ItemDetail({match}) {
   const [item, setItem] = useState({
     
     images: {}
-    
+
   });
 
 
@@ -828,6 +876,119 @@ Now we have access to the unique id of each item.
 <br />
 <br />
 <br />
+
+
+
+
+
+
+
+# Stateful Logic (AKA NON-VISUAL BEHAVIOR)
+
+
+Logic that is built into a component. <br />
+*I.e. - a function that handles a click event or a typing event.*  <br /> <br />
+
+
+These are some examples of stateful logic.  <br /> <br />
+
+
+**Example 1:** <br />
+
+```
+const handleChanges = e => {
+    setInputText(e.target.value);
+  };
+```
+<br />
+
+
+  **Example 2:** <br />
+
+```
+   const changeTitle = e => {
+    e.preventDefault();
+    setTitle(inputText);
+    setInputText("");
+  };
+  ```
+
+  <br />
+
+  ### Basically STATE in the component.
+
+  <br />
+
+  ## So, with Custom Hooks, you are building the hooks yourself.
+  - These are reusable pieces of code 
+  - You can build these for things like handling controlled inputs, managing event listeners, and watching for key presses. <br />
+
+  <a href="https://codepen.io/jasheloper/pen/GRKxwGo?editors=0010" target=_blank>Here's an example</a> where I took notes on a form that uses the `useState()` hook and stateful logic.  But would be hard to handle multiple input changes, which is where custom hooks will come into play.
+  
+  <br />
+
+  ## A custom hook would look something like this:
+
+```
+  export const useInput = initialValue => {
+
+  const [value, setValue] = useState(initialValue);
+
+  const handleChanges = updatedValue => {
+    setValue(updatedValue);
+  };
+
+  return [value, setValue, handleChanges];
+};
+```
+
+1. We are taking in `initialValue` as a parameter on this function.
+2. This is then passed into the `useState` hook which 
+3. returns an array with our `value` variable and `setValue` function.
+4. We have `handleChanges` function that uses the `setValue` function to update state to a new value.
+5. We then proceed to return an array from our `useInput` custom hook that contains the `value` variable, the `setValue` function and the `handleChanges` function.
+
+<br />
+
+So, after this custom hook is imported it'll look like this:
+
+```
+import { useInput } from "./useInput.js";
+```
+
+```
+const CustomForm = () => {
+  const [username, setUsername, handleUsername] = useInput("");
+  const [password, setPassword, handlePassword] = useInput("");
+  const [email, setEmail, handleEmail] = useInput("");
+```
+
+You see how the `useInput("")` custom hooke is re-used 3 times?  It's sort of like a template that you built to make it easier & keep your code `DRY`.
+
+<br />
+
+```
+  const resetValues = e => {
+    e.preventDefault();
+    setUsername("");
+    setPassword("");
+    setEmail("");
+  };
+```
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
 
 
 
