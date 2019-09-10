@@ -256,6 +256,12 @@ function Tweet({name, message}) {
 }
 ```
 
+<br />
+
+### Resources:
+
+- <a href="https://youtu.be/35lXWvCuM8o?t=812" target=_blank>Using Context Component Provider instead of props</a>
+
 
 <br />
 <br />
@@ -286,7 +292,7 @@ function Tweet({name, message}) {
 
 <br />
 
-**Example, state will change based on button click.  This is an example component using state:**
+## Example, state of some text will change based on button click. 
 
 
   ```
@@ -296,13 +302,14 @@ function Tweet({name, message}) {
   function App() {
 
     
-    /// SET STATE ///
+// SO WE SET THE STATE HERE. 
 
         const [isRed, setRed] = useState(false);
         const [count, setCount] = useState(0);
 
 
-    /// VARIABLES CALLING STATE /// 
+
+// FUNCTION 'INCREMENT', WE ARE CALLING setCount AND setRed FROM ABOVE. 
 
         const increment = () => {
           setCount(count + 1);
@@ -314,6 +321,11 @@ function Tweet({name, message}) {
     return (
 
       <div className="app">
+
+
+
+// THIS IS A REACT CONDITION, IF className IS RED, SET COLOR TO RED AND IF NOT... DON'T. 
+
 
             <h1 className={isRed ? 'red' : ""}>Change my color!</h1>
 
@@ -328,13 +340,7 @@ function Tweet({name, message}) {
   ```
 
 
-<br />
 
-```
-<h1 className={isRed ? 'red' : ""}>Change my color!</h1>
-```
-
-This is an if/else statement in React.
 
 <br />
 <br />
@@ -343,7 +349,7 @@ This is an if/else statement in React.
 
 
 
-**State with an Object:**
+## State with an Object:
 
 ```
  import React, {useState} from "react";
@@ -352,7 +358,7 @@ This is an if/else statement in React.
   function App() {
 
 
- ///  MOST OF THE TIME THIS DATA WILL COME FROM AN API... OR SOMETHING   ///
+// MOST OF THE TIME THIS DATA WILL COME FROM AN API... OR SOMETHING   
 
     const [users, setUser] = useState([
           {name: 'Jashele', message: 'Hello there'},
@@ -415,8 +421,8 @@ Yeah, we're just returning that for each user now using .map
 
 **Resources:**
 <br />
-- <a href="https://youtu.be/35lXWvCuM8o?t=103" target=_blank>More About State Explained - Movie List Example</a>
-- <a href="https://youtu.be/35lXWvCuM8o?t=812" target=_blank>Context Component [.Provider] instead of props</a>
+- <a href="https://youtu.be/35lXWvCuM8o?t=103" target=_blank>More About State Explained - Build a Movie List</a>
+
 
 
 
@@ -491,21 +497,21 @@ import {BrowserRouter as Router, Switch, Route} 'react-router-dom';
 ```
 function App() {
 
-        <Router>
+  <Router>
 
-            <div className="App">
+    <div className="App">
 
-                <Nav />
+      <Nav />
 
-                <Route path "/" component={Home}>
+      <Route path "/" component={Home}>
 
-                <Route path="/about" component={About} />
+      <Route path="/about" component={About} />
 
-                <Route path="/shop" component={Shop} />
+      <Route path="/shop" component={Shop} />
 
-            <div>
+    <div>
 
-      </Router>
+  </Router>
 
 }
 ```
@@ -521,25 +527,25 @@ function App() {
 ```
 function App() {
 
-        <Router>
+  <Router>
 
-            <div className="App">
+    <div className="App">
 
-                <Nav />
+    <Nav />
 
-                <Switch>
+      <Switch>
 
-                <Route path "/" component={Home}>
+        <Route path "/" component={Home}>
 
-                <Route path="/about" component={About} />
+        <Route path="/about" component={About} />
 
-                <Route path="/shop" component={Shop} />
+        <Route path="/shop" component={Shop} />
 
-                 </Switch>
+      </Switch>
 
-            <div>
+    <div>
 
-      </Router>
+  </Router>
 
 }
 ```
@@ -559,25 +565,25 @@ As soon as it detects say... `/about` or `/shop`  the route will stop so that it
 ```
 function App() {
 
-        <Router>
+  <Router>
 
-            <div className="App">
+    <div className="App">
 
-                <Nav />
+      <Nav />
 
-                <Switch>
+        <Switch>
 
-                <Route path "/" exact component={Home}>
+          <Route path "/" exact component={Home}>
 
-                <Route path="/about" component={About} />
+          <Route path="/about" component={About} />
 
-                <Route path="/shop" component={Shop} />
+          <Route path="/shop" component={Shop} />
 
-                 </Switch>
+        </Switch>
 
-            <div>
+    <div>
 
-      </Router>
+  </Router>
 
 }
 ```
@@ -593,36 +599,27 @@ import {Link} from 'react-router-dom';
 function Nav() {
   return (
 
-    const navStyle = {
-      color: 'white'
-    };
+  const navStyle = {
+  color: 'white'
+};
 
 
 
-      <nav>
-        <h3>Logo<h3>
-                  <ul className="nav-links">
+<nav>
 
-                            <Link style={navStyle} to='/about'>
+  <h3>Logo<h3>
+  <ul className="nav-links">
 
-                              <li>About</li>
+    <Link style={navStyle} to='/about'><li>About</li></Link>
 
-                              </Link>
+    <Link style={navStyle}  to='/shop'><li>Shop</li></Link>
 
+  </ul>
 
+</nav>
 
-
-                            <Link style={navStyle}  to='/shop'>
-
-                              <li>Shop</li>
-
-                              </Link>
-
-
-                    </ul>
-          </nav>
-    )
-}
+  )
+  }
 
 export default Nav;
 ```
@@ -658,15 +655,14 @@ function Shop() {
 
 
 
-
 // useEffect() TO RUN THIS & THE [ ] MEANS THIS WILL ONLY RUN WHEN THE COMPONENT MOUNTS //
 
 
-    useEffect(() => {
+useEffect(() => {
 
-        fetchItems();
+fetchItems();
 
-    }, []);
+}, []);
 
 
 
@@ -674,54 +670,54 @@ function Shop() {
 
 // CREATE A STATE TO PUT THOSE ITEMS IN 
 
-  const [items, setItems] = useState([]);
+const [items, setItems] = useState([]);
 
 
 
 
 
-// CREATE A FETCH CALL //
+// CREATE A FETCH CALL 
 
 
-    const fetchItems = async () => {
+const fetchItems = async () => {
 
-          const data = await fetch('https://fortnite-public-api.theapinetwork.com/prod09/upcoming/get');
-    }
-
-
-
-
-// CONVERTING ITEMS TO JSON TO MAKE THE ITEMS EASIER TO READ IN THE CONSOLE // 
-
-    const items = await data.json();
-
-   
-// YOU CAN SET ITEMS TO THE ITEMS THAT WE'RE GETTING BACK // 
-    console.log(items.items)
-    setItems(items.items)
+const data = await fetch('https://fortnite-public-api.theapinetwork.com/prod09/upcoming/get');
+}
 
 
 
-    return (
-        <div>
 
-        /// HERE WE CAN RENDER OUT STUFF FROM THE API ///
+// CONVERTING ITEMS TO JSON TO MAKE THE ITEMS EASIER TO READ IN THE CONSOLE 
 
-          {items.map(item => (
-            <h1 key={item.itemid}>{item.name}</h1>
+const items = await data.json();
 
 
+// YOU CAN SET ITEMS TO THE ITEMS THAT WE'RE GETTING BACK 
+console.log(items.items)
+setItems(items.items)
 
-            // WHAT IF YOU WANT TO ADD A LINK TO EACH ITEM??  
-            WE CAN USE DYNAMIC ROUTING TO GO TO THE UNIQUE ITEM'S LINK (ID). //
 
-                    <Link to={`/shop/${item.itemid}`}>{item.name}</Link>
-          ))}
-         
-         
 
-        </div>
-    );
+return (
+  <div>
+
+  /// HERE WE CAN RENDER OUT STUFF FROM THE API 
+
+    {items.map(item => (
+     <h1 key={item.itemid}>{item.name}</h1>
+
+
+
+    // WHAT IF YOU WANT TO ADD A LINK TO EACH ITEM??  
+    WE CAN USE DYNAMIC ROUTING TO GO TO THE UNIQUE ITEM'S LINK (ID). 
+
+        <Link to={`/shop/${item.itemid}`}>{item.name}</Link>
+    ))}
+
+
+
+  </div>
+);
 }
 
 export default Shop;
