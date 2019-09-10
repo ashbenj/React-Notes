@@ -885,6 +885,10 @@ Now we have access to the unique id of each item.
 
 # Stateful Logic (AKA NON-VISUAL BEHAVIOR)
 
+`Last updated: September 10, 2019 @ 3:35pm MDT`
+
+<br />
+
 
 Logic that is built into a component. <br />
 *I.e. - a function that handles a click event or a typing event.*  <br /> <br />
