@@ -923,7 +923,7 @@ const handleChanges = e => {
   - These are reusable pieces of code 
   - You can build these for things like handling controlled inputs, managing event listeners, and watching for key presses. <br />
 
-  <a href="https://codepen.io/jasheloper/pen/GRKxwGo?editors=0010" target=_blank>Here's an example</a> where I took notes on a form that uses the `useState()` hook and stateful logic.  But would be hard to handle multiple input changes, which is where custom hooks will come into play.
+  <a href="https://codepen.io/jasheloper/pen/GRKxwGo?editors=0010" target=_blank>Here's an example</a> where I took notes on a form that uses the `useState()` hook and stateful logic.  But it would be tedious to handle multiple input changes this way, which is where custom hooks will come into play.
   
   <br />
 
@@ -942,12 +942,20 @@ const handleChanges = e => {
 };
 ```
 
-1. We are taking in `initialValue` as a parameter on this function.
-2. This is then passed into the `useState` hook which 
-3. returns an array with our `value` variable and `setValue` function.
-4. We have `handleChanges` function that uses the `setValue` function to update state to a new value.
-5. We then proceed to return an array from our `useInput` custom hook that contains the `value` variable, the `setValue` function and the `handleChanges` function.
 
+## - This is a **custom hook function** called `useInput`.
+  - It takes in `initialValue` as a parameter, which is passed into the `useState` hook.
+  - This returns an array with our `value` and `setValue` function.
+
+- We have a `handleChanges` function that takes in a parameter `updatedValue`.
+  - It uses the `setValue` function to update state to a new value.
+  - This also returns in our array.
+
+
+
+
+
+<br />
 <br />
 
 So, after this custom hook is imported it'll look like this:
@@ -963,18 +971,20 @@ const CustomForm = () => {
   const [email, setEmail, handleEmail] = useInput("");
 ```
 
-You see how the `useInput("")` custom hooke is re-used 3 times?  It's sort of like a template that you built to make it easier & keep your code `DRY`.
+
+- See how we can just invoke `useInput()` each time?  And the custom hook we wrote is what's happening behind the scenes.
+
+- We are able to rename the values because of array destructuring.
+
+
 
 <br />
 
-```
-  const resetValues = e => {
-    e.preventDefault();
-    setUsername("");
-    setPassword("");
-    setEmail("");
-  };
-```
+
+## You can also use one or more hooks inside a custom hook.
+You'll achieve a more powerful hook with multiple pieces of stateful logic.
+
+
 
 
 
