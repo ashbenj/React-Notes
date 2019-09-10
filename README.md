@@ -985,6 +985,29 @@ const CustomForm = () => {
 You'll achieve a more powerful hook with multiple pieces of stateful logic.
 
 
+<br />
+
+### For example:
+
+- <a href="https://youtu.be/3T3cGxGHQs0?t=5841" target=_blank>Local Storage (video w/example)</a>
+
+  - **Local Storage? | <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage" target=_blank>according to dev.mozilla</a>~**  
+    - allows you to access a Storage object for the Document's origin
+    - the stored data is saved across browser sessions
+    - `localStorage` has no expiration time
+
+<br />
+
+### More Resources for Stateful Logic:
+- <a href="https://youtu.be/3T3cGxGHQs0?t=4880" target=_blank>Adding a condition to a form or JSX in general (video)</a>
+
+
+
+
+
+
+
+
 
 
 
