@@ -989,7 +989,7 @@ You'll achieve a more powerful hook with multiple pieces of stateful logic.
 
 ### For example:
 
-- <a href="https://youtu.be/3T3cGxGHQs0?t=5841" target=_blank>Local Storage (video w/example)</a>
+- <a href="https://youtu.be/3T3cGxGHQs0?t=5841" target=_blank>Local Storage (video w/example)</a> & <a href="https://codesandbox.io/s/customhooks-8vj01?fontsize=14" target=_blank>follow along code</a>
 
   - **Local Storage? | <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage" target=_blank>according to dev.mozilla</a>~**  
     - allows you to access a Storage object for the Document's origin
