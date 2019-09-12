@@ -1035,7 +1035,7 @@ You'll achieve a more powerful hook with multiple pieces of stateful logic.
 
 **Installation:**
 
-  - Run `npm init -y` inside the terminal,
+  - Run `npm init -y` inside your project's terminal,
   - Create a jest config file by running `npx jest --init`
 
 
