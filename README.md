@@ -1004,6 +1004,73 @@ You'll achieve a more powerful hook with multiple pieces of stateful logic.
 
 
 
+<br />
+<br />
+<br />
+
+
+# Unit Testing 
+
+- Automated testing minimizes the risk of bugs finding their way into production code.
+  - Surfaces bugs faster.
+  - Makes us think about the edge cases.
+  - Acts as a safety net when making changes or refactoring.
+  - Acts as documentation for the code.
+  - Encourages us to write more testable (better!) code.
+
+
+  <br />
+
+
+
+
+
+
+ ## Jest
+
+ A library used for testing.
+
+  <br />
+
+
+**Installation:**
+
+  - Run `npm init -y` inside the terminal,
+  - Create a jest config file by running `npx jest --init`
+
+
+
+  <br />
+
+
+
+  ## Sample Test in App.test.js
+
+  ```
+  import React from "react";
+  import { render } from "@testing-library/react";
+  import App from "./App";
+
+  test("renders without crashing", () => {
+
+    // Test info here.
+
+  });
+  ```
+
+
+ <br />
+
+
+
+
+
+### Resources:
+- <a href="https://youtu.be/1vV4ApbPg-8?t=5299" target=_blank>Watch a Tutorial on a Sample Unit Test</a>
+- <a href="https://youtu.be/1vV4ApbPg-8?t=6332" target=_blank>Video - Refactor & Setting up Testing with a Project</a>
+
+
+
 
 
 
